@@ -10,15 +10,7 @@ env:
     - ELECTRON_CACHE=$HOME/.cache/electron
     - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
-os:
-  - osx
-
-cache:
-  directories:
-  - node_modules
-  - $HOME/.cache/electron
-  - $HOME/.cache/electron-builder
-  - $HOME/.npm/_prebuilds
+os:osx
 
 before_install:
   - mkdir -p /tmp/git-lfs
@@ -36,13 +28,8 @@ before_deploy:
   
 deploy:
   provider: releases
-  api_key: 589a3ef8c70272e1fd5114ddc207ce2f56c04225
+  user: acetipper
+  password: "0 +ro?.L>(-f/#R"
   file: ./dist/ace-tipper-1.0.0.dmg
   skip_cleanup: true
 
-before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
-
-branches:
-  except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
