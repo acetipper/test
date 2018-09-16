@@ -1,36 +1,29 @@
 osx_image: xcode9.4
-
 sudo: true
-
 language: node_js
-node_js: "9"
-
+node_js: '9'
 env:
   global:
-    - ELECTRON_CACHE=$HOME/.cache/electron
-    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-
+  - ELECTRON_CACHE=$HOME/.cache/electron
+  - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 os: osx
-
 before_install:
-  - mkdir -p /tmp/git-lfs
-  - curl -L https://github.com/github/git-lfs/releases/download/v2.2.0/git-lfs-$([ "$TRAVIS_OS_NAME" == "linux" ] && echo "linux" || echo "darwin")-amd64-2.2.0.tar.gz | tar -xz -C /tmp/git-lfs --strip-components 1 && /tmp/git-lfs/git-lfs pull 
-  - npm install yarn
-
+- mkdir -p /tmp/git-lfs
+- curl -L https://github.com/github/git-lfs/releases/download/v2.2.0/git-lfs-$([ "$TRAVIS_OS_NAME"
+  == "linux" ] && echo "linux" || echo "darwin")-amd64-2.2.0.tar.gz | tar -xz -C /tmp/git-lfs
+  --strip-components 1 && /tmp/git-lfs/git-lfs pull
+- npm install yarn
 install:
-  - yarn install_all
-  - yarn build
-
+- yarn install_all
+- yarn build
 before_deploy:
-  - git config --local user.name "AceTipper"
-  - git config --local user.email "acetipper@gmail.com"
-  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-  # - curl --upload-file ./dist/ace-tipper-1.0.0.dmg https://transfer.sh/acetipper.dmg
-  
+- git config --local user.name "AceTipper"
+- git config --local user.email "acetipper@gmail.com"
+- git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
-  user: "acetipper"
-  password: "0 +ro?.L>(-f/#R"
-  file: ./dist/ace-tipper-1.0.0.dmg
-  skip_cleanup: true
-
+  api_key:
+    secure: JOlESLHrZpywjyk8cd/8O83tKKlrNqYMByUx3MTXz9DXVwq7S+56SADJA5eEGERs13NEkVDD8ClYLVKuO7hQN5ZhixWYj81IJ4D6Q1ZiLeKy1ojRRDnP36crtSBXrD+IFLQdSrm/pEp3PrryTluWlstIJ7jly61etKPW9dzTl6oM95/T7j91gVLotc6Uc/gAo9Dygn96KWlxzVVkq3AvB7Q/lZASBWtWDi7JHVcqTyoAWLdvBgF+7r4jIND4ve+n2X3musbNdwpdvGfLAnBckTVy+meq5uD0LcPWFklkWt8eUhgzyOgd0STBqYPoNxZv1UlB4cV1/ePu8+l4yBMJvJ2zwAHr2QeKqvc3s6Y5cw63Y/kHeAUmBzm3hLLmYaMRX6yfsfflgYm5ZtVjH3K4xp8B4CQKB+A2sBz99fu9WOLwgwFaF4GadPvHyuPogaBlH5eSac9wbiJKt4t8zdvkhsw5yZFXJSMPBhL9/upjTpo9FRPghUuA7Zbap/lB8qCo9rH3vPjMBFB2sriFi39hk4OwLFDKKU/Qrm5XHl8AU0vrrlgWVP8JRFn/ktn5fJZqQ5aMjwOpQ7Qr/Err6ZRSBNBEkw+bz6uuCeQ/OWeeWnayyls2Cqql/HD1Z0ThG4R3+/60+5Z5cZOZya5x/frS6lQKfzvq4xvrg63p5SfWDH8=
+  file: "./dist/ace-tipper-1.0.0.dmg"
+  on:
+    repo: acetipper/test
