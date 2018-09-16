@@ -68,7 +68,7 @@
     "fix-util":"cp -rf ./node_modules/bitbox-cli/lib/Util.js ./node_modules/bitbox-cli/lib/Util-txt && babel --presets es2015 ./node_modules/bitbox-cli/lib/Util-txt -o ./node_modules/bitbox-cli/lib/Util.js",
 
     "install_all":"yarn install && yarn fix-bip68 && yarn fix-mangle && yarn build",
-    "build": "yarn react-build && yarn electron-build"    
+    "build": "yarn react-build && yarn electron-build"
   },
 
   "main": "public/electron.js"

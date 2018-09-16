@@ -29,8 +29,16 @@ install:
   - yarn install_all
   - yarn build
 
-script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn release -- --mac --win; fi
+before_deploy:
+  - git config --local user.name "AceTipper"
+  - git config --local user.email "acetipper@gmail.com"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  
+deploy:
+  provider: releases
+  api_key: "589a3ef8c70272e1fd5114ddc207ce2f56c04225"
+  file: "idk"
+  skip_cleanup: true
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
