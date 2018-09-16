@@ -1,0 +1,1 @@
+copy /Y package-prod.json ..\..\prod\package.json
