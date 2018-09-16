@@ -10,7 +10,7 @@ env:
     - ELECTRON_CACHE=$HOME/.cache/electron
     - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
-os:osx
+os: osx
 
 before_install:
   - mkdir -p /tmp/git-lfs
