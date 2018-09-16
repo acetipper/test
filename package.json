@@ -69,7 +69,7 @@
 
     "install_all":"yarn install && yarn fix-bip68 && yarn fix-mangle && yarn build",
     "build": "yarn react-build && yarn electron-build",
-    "test": ""
+    "test": "cd ."
   },
 
   "main": "public/electron.js"
