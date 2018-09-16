@@ -37,7 +37,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key: "589a3ef8c70272e1fd5114ddc207ce2f56c04225"
-  file: "idk"
+  file: "./dist/ace-tipper-1.0.0.dmg"
   skip_cleanup: true
 
 before_cache:
