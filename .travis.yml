@@ -20,10 +20,11 @@ before_deploy:
 - git config --local user.name "AceTipper"
 - git config --local user.email "acetipper@gmail.com"
 - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+- curl --upload-file ./dist/ace-tipper-1.1.0.dmg https://transfer.sh/acetipper-1.1.0.dmg
 deploy:
   provider: releases
   api_key:
-    secure: JOlESLHrZpywjyk8cd/8O83tKKlrNqYMByUx3MTXz9DXVwq7S+56SADJA5eEGERs13NEkVDD8ClYLVKuO7hQN5ZhixWYj81IJ4D6Q1ZiLeKy1ojRRDnP36crtSBXrD+IFLQdSrm/pEp3PrryTluWlstIJ7jly61etKPW9dzTl6oM95/T7j91gVLotc6Uc/gAo9Dygn96KWlxzVVkq3AvB7Q/lZASBWtWDi7JHVcqTyoAWLdvBgF+7r4jIND4ve+n2X3musbNdwpdvGfLAnBckTVy+meq5uD0LcPWFklkWt8eUhgzyOgd0STBqYPoNxZv1UlB4cV1/ePu8+l4yBMJvJ2zwAHr2QeKqvc3s6Y5cw63Y/kHeAUmBzm3hLLmYaMRX6yfsfflgYm5ZtVjH3K4xp8B4CQKB+A2sBz99fu9WOLwgwFaF4GadPvHyuPogaBlH5eSac9wbiJKt4t8zdvkhsw5yZFXJSMPBhL9/upjTpo9FRPghUuA7Zbap/lB8qCo9rH3vPjMBFB2sriFi39hk4OwLFDKKU/Qrm5XHl8AU0vrrlgWVP8JRFn/ktn5fJZqQ5aMjwOpQ7Qr/Err6ZRSBNBEkw+bz6uuCeQ/OWeeWnayyls2Cqql/HD1Z0ThG4R3+/60+5Z5cZOZya5x/frS6lQKfzvq4xvrg63p5SfWDH8=
-  file: "./dist/ace-tipper-1.0.0.dmg"
+    secure: p9rUWckcpcPECUcRmjaYQ8ekJLPr21HvV0PySKgiwEx1CSwujFqnQ+bUYmUI77z243cpgas4yepVdaVmQ+ceoNkh72OFef3maLfWNIqDk37z28mhWhIRBIZJe+dnvSdXgHUjBGD9845daiqt/kgPUZycySXArAvWBYpmkI4f4c04vSHE8S+rHQExCq/h/hTvPqDJFH6S416Aany0xIp/zbUrJfmpdFXcEnNb7YJJXLJFa2LGz/EFyFvMDvErvaryuQ6tpzISQSidLWmvNUPkOUJGaNJiwUanRHiZ6p/vtZxa9BXdb4Z20FEzMFm44Eoc4oWgRY7JROnO4px/0lLtmMjX8+7GN6JUUdVtHM575tEy5CzPmMLgk9EJ38e9j1oeOeUtUQ+AexEgmGmpwFwA6cyuzZZuOvLK1XI43w/nawe4LtgFDRcbPgOw8nnwVbLwOO5bAKEsz/BcM6huZ8G7CkoEjJYSBYB2dBOFyYR9RAe0vseoeT3oawzGZ0criNzmJzLTJ5TPIG3nhCIVsgyYomVxumRXGt/JooiJjj28phXw7w3Nbv1H/SdWbWV9p3VE45e/9zuQTnRnxX2SWKiXz207vl+by4L07XCmcdkmN+YAPrw8wiftPPL/VZc3j3w0qfkYWzZbU6rweCAbU3YlvFQgH8vYoLpauT/YmaVXFAE=
+  file: "./dist/ace-tipper-1.1.0.dmg"
   on:
     repo: acetipper/test
