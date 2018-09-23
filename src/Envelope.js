@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {store} from './store';
-import {Util} from './Util';
 
 class Envelope extends Component { 
 

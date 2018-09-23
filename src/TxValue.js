@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Currency from 'react-currency-formatter';
 import Label from 'react-bootstrap/lib/Label';
 import {store} from './store';
 import TextField from '@material-ui/core/TextField';
