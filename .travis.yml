@@ -20,7 +20,7 @@ before_deploy:
 - git config --local user.name "AceTipper"
 - git config --local user.email "acetipper@gmail.com"
 - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-- curl --upload-file ./dist/ace-tipper-1.1.0.dmg https://transfer.sh/acetipper-1.1.0.dmg
+- curl --upload-file ./dist/ace-tipper-1.1.0.dmg https://transfer.sh/acetipper-1.1.0-1.1.0.dmg
 deploy:
   provider: releases
   api_key:
